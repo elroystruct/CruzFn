@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms of Service — Cruz Financial Associates LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #F9F7F3;
+    --ink: #1A1916;
+    --ink-muted: #6B6860;
+    --gold: #B89A5A;
+    --border: rgba(26,25,22,0.1);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.8;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    height: 72px;
+    background: rgba(249,247,243,0.95);
+    backdrop-filter: blur(14px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-back {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--ink); }
+
+  .page-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 140px 40px 100px;
+  }
+
+  .page-tag {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .page-tag::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 0.5px;
+    background: var(--gold);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(38px, 5vw, 60px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .effective {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .doc-section {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .doc-section:last-child { border-bottom: none; }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+
+  p {
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+    font-size: 15px;
+    line-height: 1.85;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  ul {
+    list-style: none;
+    margin: 16px 0;
+    padding: 0;
+  }
+  ul li {
+    color: var(--ink-muted);
+    font-size: 15px;
+    line-height: 1.85;
+    padding: 8px 0 8px 20px;
+    border-bottom: 0.5px solid var(--border);
+    position: relative;
+  }
+  ul li:last-child { border-bottom: none; }
+  ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .contact-block {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 36px 40px;
+    margin-top: 60px;
+  }
+  .contact-block p {
+    color: rgba(249,247,243,0.6);
+    margin-bottom: 8px;
+  }
+  .contact-block a {
+    color: var(--gold);
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  footer {
+    background: var(--ink);
+    padding: 28px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(249,247,243,0.35);
+  }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-link {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(249,247,243,0.25);
+    transition: color 0.2s;
+  }
+  .footer-link:hover { color: rgba(249,247,243,0.6); }
+  .footer-copy {
+    font-size: 11px;
+    color: rgba(249,247,243,0.2);
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .page-wrap { padding: 120px 24px 80px; }
+    footer { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Cruz Financial <span>Associates</span></a>
+  <a href="index.html" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M13 8H3M8 13l-5-5 5-5"/>
+    </svg>
+    Back to home
+  </a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-tag">Legal</div>
+  <h1>Terms of Service</h1>
+  <p class="effective">Effective Date: June 11, 2026 &nbsp;|&nbsp; Cruz Financial Associates LLC</p>
+
+  <div class="doc-section">
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing our website, contacting us, or engaging our services, you agree to be bound by these Terms of Service ("Terms"). These Terms constitute a legally binding agreement between you and Cruz Financial Associates LLC ("Company," "we," "us," or "our"). If you do not agree to these Terms, do not use our website or services.</p>
+    <p>We reserve the right to modify these Terms at any time. Continued use of our services after changes are posted constitutes acceptance of the updated Terms.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>2. Services Provided</h2>
+    <p>Cruz Financial Associates LLC provides the following services:</p>
+    <ul>
+      <li>Real estate wholesaling, including the identification and assignment of off-market properties</li>
+      <li>Land flips and vacant land acquisition and disposition</li>
+      <li>Real estate and land acquisition consulting</li>
+      <li>Financial consulting, deal underwriting, and capital structuring</li>
+      <li>Deal structuring, including assignment contracts and joint venture agreements</li>
+      <li>Advisory services for real estate investors and operators</li>
+    </ul>
+    <p>All services are provided subject to separate written agreements where applicable. Nothing on this website constitutes a binding offer or guarantee of specific outcomes.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>3. No Real Estate Brokerage</h2>
+    <p>Cruz Financial Associates LLC operates as a real estate wholesaler and consultant. We are not a licensed real estate broker or agent in any jurisdiction unless expressly stated. We do not represent buyers or sellers in a fiduciary capacity. Nothing in our communications constitutes licensed real estate brokerage services.</p>
+    <p>Parties to real estate transactions are encouraged to seek independent legal and real estate counsel as appropriate.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>4. No Financial or Legal Advice</h2>
+    <p>The information provided on this website and through our consulting services is for general informational and business purposes only. It does not constitute legal, tax, financial, or investment advice. Cruz Financial Associates LLC is not a registered investment advisor, broker-dealer, or licensed financial institution.</p>
+    <p>You should consult qualified legal, tax, and financial professionals before making any investment or financial decision.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>5. Telephone and SMS Communications</h2>
+    <p>Cruz Financial Associates LLC uses telephone and SMS communication systems to conduct outbound outreach to property owners, investors, and business prospects. By engaging with our services or providing your phone number, you consent to receiving calls and text messages from us related to real estate and financial services.</p>
+    <p>We comply with applicable telemarketing laws including the Telephone Consumer Protection Act (TCPA). You may opt out at any time by replying STOP to any SMS message or by contacting us directly at +1 (860) 212-7882. Opting out will not affect any existing contractual obligations.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>6. User Conduct</h2>
+    <p>When interacting with Cruz Financial Associates LLC, you agree not to:</p>
+    <ul>
+      <li>Provide false, misleading, or fraudulent information in connection with any transaction or inquiry</li>
+      <li>Use our services for any unlawful purpose or in violation of applicable laws or regulations</li>
+      <li>Interfere with, disrupt, or attempt to gain unauthorized access to our systems or website</li>
+      <li>Engage in any conduct that damages our reputation or business relationships</li>
+      <li>Reproduce, distribute, or exploit any content from our website without written permission</li>
+    </ul>
+  </div>
+
+  <div class="doc-section">
+    <h2>7. Intellectual Property</h2>
+    <p>All content on this website, including text, design, graphics, and branding, is the property of Cruz Financial Associates LLC and is protected by applicable intellectual property laws. You may not copy, reproduce, modify, or distribute any content from this website without prior written consent.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>8. Confidentiality</h2>
+    <p>Any non-public information shared between the parties in connection with a deal, consultation, or business engagement ("Confidential Information") shall be kept strictly confidential and not disclosed to third parties without prior written consent, except as required by law or as necessary to complete an authorized transaction.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>9. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by applicable law, Cruz Financial Associates LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of our website or services, even if we have been advised of the possibility of such damages.</p>
+    <p>Our total liability to you for any claim arising out of or relating to these Terms or our services shall not exceed the total fees paid by you to Cruz Financial Associates LLC in the three (3) months preceding the claim.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>10. Indemnification</h2>
+    <p>You agree to indemnify, defend, and hold harmless Cruz Financial Associates LLC and its officers, employees, and agents from and against any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising out of your use of our services, your violation of these Terms, or your violation of any applicable law or third-party rights.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>11. Dispute Resolution</h2>
+    <p>Any dispute arising out of or relating to these Terms or our services shall first be addressed through good-faith negotiation between the parties. If unresolved within thirty (30) days, disputes shall be submitted to binding arbitration in accordance with the rules of the American Arbitration Association, with proceedings conducted in the State of Connecticut.</p>
+    <p>You waive any right to participate in a class action lawsuit or class-wide arbitration against Cruz Financial Associates LLC.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>12. Governing Law</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the State of Connecticut, without regard to its conflict of law principles.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>13. Severability</h2>
+    <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall continue in full force and effect.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>14. Entire Agreement</h2>
+    <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and Cruz Financial Associates LLC with respect to your use of our website and services, and supersede all prior agreements and understandings.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>15. Contact Us</h2>
+    <p>For questions or concerns regarding these Terms, contact us directly:</p>
+  </div>
+
+  <div class="contact-block">
+    <p>Cruz Financial Associates LLC</p>
+    <a href="tel:+18602127882">+1 (860) 212-7882</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Cruz Financial Associates LLC</div>
+  <div class="footer-links">
+    <a href="index.html" class="footer-link">Home</a>
+    <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+    <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+    <span class="footer-copy">© 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
