@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Cruz Financial Associates LLC. Real estate wholesaling, land flips, land acquisition, financial consulting, and deal structuring." />
+<title>Cruz Financial Associates LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+
+  input[type="checkbox"] {
+    appearance: checkbox;
+    -webkit-appearance: checkbox;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  :root {
+    --cream: #F9F7F3;
+    --ink: #1A1916;
+    --ink-muted: #6B6860;
+    --ink-faint: #A8A69F;
+    --gold: #B89A5A;
+    --gold-light: #E8DEC8;
+    --border: rgba(26,25,22,0.1);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    height: 72px;
+    background: rgba(249,247,243,0.93);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 0.5px solid var(--border);
+    transition: box-shadow 0.3s;
+  }
+
+  nav.scrolled {
+    box-shadow: 0 1px 20px rgba(26,25,22,0.06);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+
+  .nav-cta {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 0.5px solid var(--ink);
+    padding: 11px 26px;
+    color: var(--ink);
+    transition: all 0.2s;
+  }
+
+  .nav-cta:hover {
+    background: var(--ink);
+    color: var(--cream);
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--ink);
+    transition: all 0.3s;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 72px; left: 0; right: 0;
+    background: var(--cream);
+    border-bottom: 0.5px solid var(--border);
+    padding: 24px 32px;
+    z-index: 99;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    padding: 8px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .mobile-menu a:last-child { border-bottom: none; }
+
+  /* SECTIONS */
+  section { padding: 120px 60px; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 160px;
+    padding-bottom: 100px;
+    border-bottom: 0.5px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-display);
+    font-size: clamp(100px, 18vw, 240px);
+    font-weight: 300;
+    color: rgba(26,25,22,0.03);
+    pointer-events: none;
+    white-space: nowrap;
+    user-select: none;
+    line-height: 1;
+  }
+
+  .hero-inner { max-width: 760px; position: relative; z-index: 1; }
+
+  .hero-tag {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .hero-tag::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 0.5px;
+    background: var(--gold);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 6.5vw, 88px);
+    font-weight: 300;
+    line-height: 1.06;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--ink-muted);
+    max-width: 500px;
+    line-height: 1.85;
+    margin-bottom: 52px;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 17px 40px;
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover { background: #2e2d2a; }
+
+  .btn-ghost {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.2s;
+  }
+
+  .btn-ghost:hover { color: var(--ink); }
+
+  .btn-ghost svg { width: 15px; height: 15px; transition: transform 0.2s; }
+  .btn-ghost:hover svg { transform: translateX(3px); }
+
+  .hero-stats {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 0.5px solid var(--border);
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 38px;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* SERVICES */
+  .services { border-bottom: 0.5px solid var(--border); }
+
+  .services-header {
+    max-width: 560px;
+    margin-bottom: 72px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(34px, 4.5vw, 56px);
+    font-weight: 300;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+
+  h2 em { font-style: italic; color: var(--gold); }
+
+  .services-header p {
+    color: var(--ink-muted);
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 0.5px solid var(--border);
+    border-left: 0.5px solid var(--border);
+  }
+
+  .service-card {
+    padding: 44px 38px;
+    border-right: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+    transition: background 0.25s;
+    cursor: default;
+  }
+
+  .service-card:hover { background: rgba(255,255,255,0.7); }
+
+  .service-num {
+    font-family: var(--font-display);
+    font-size: 13px;
+    color: var(--gold);
+    margin-bottom: 26px;
+    letter-spacing: 0.08em;
+  }
+
+  .service-card h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 14px;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+
+  .service-card p {
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* ABOUT */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .about-left { position: sticky; top: 120px; }
+
+  .about-right p {
+    color: var(--ink-muted);
+    margin-bottom: 22px;
+    line-height: 1.9;
+    font-size: 15px;
+  }
+
+  .about-pillars {
+    margin-top: 44px;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .pillar {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 22px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .pillar-marker {
+    font-family: var(--font-display);
+    font-size: 13px;
+    color: var(--gold);
+    flex-shrink: 0;
+    padding-top: 2px;
+    min-width: 28px;
+  }
+
+  .pillar-text strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 5px;
+    letter-spacing: 0.01em;
+  }
+
+  .pillar-text span {
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  /* CONTACT */
+  .contact {
+    background: var(--ink);
+    color: var(--cream);
+  }
+
+  .contact .section-label { color: var(--gold); }
+  .contact h2 { color: var(--cream); }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  .contact-left p {
+    color: rgba(249,247,243,0.5);
+    line-height: 1.9;
+    margin-bottom: 44px;
+    font-size: 15px;
+  }
+
+  .contact-phone-block {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 36px;
+    border: 0.5px solid rgba(249,247,243,0.18);
+    transition: border-color 0.2s, background 0.2s;
+    cursor: pointer;
+  }
+
+  .contact-phone-block:hover {
+    border-color: rgba(249,247,243,0.45);
+    background: rgba(249,247,243,0.04);
+  }
+
+  .phone-icon {
+    opacity: 0.35;
+    flex-shrink: 0;
+  }
+
+  .phone-label {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(249,247,243,0.35);
+    margin-bottom: 6px;
+  }
+
+  .phone-number {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--cream);
+    letter-spacing: 0.03em;
+  }
+
+  .contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    padding-top: 8px;
+  }
+
+  .cinfo-label {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(249,247,243,0.3);
+    margin-bottom: 8px;
+  }
+
+  .cinfo-val {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 300;
+    color: rgba(249,247,243,0.75);
+    letter-spacing: 0.015em;
+  }
+
+  .cinfo-note {
+    font-size: 12px;
+    color: rgba(249,247,243,0.28);
+    margin-top: 5px;
+  }
+
+  .services-list {
+    font-size: 13px;
+    color: rgba(249,247,243,0.38);
+    line-height: 2;
+    font-weight: 300;
+  }
+
+  /* CONTACT FORM */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 48px;
+    padding-top: 48px;
+    border-top: 0.5px solid rgba(249,247,243,0.1);
+  }
+
+  .contact-form-title {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(249,247,243,0.35);
+    margin-bottom: 8px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-field label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(249,247,243,0.3);
+  }
+
+  .form-field input,
+  .form-field textarea,
+  .form-field select {
+    background: rgba(249,247,243,0.05);
+    border: 0.5px solid rgba(249,247,243,0.15);
+    color: var(--cream);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 300;
+    padding: 13px 16px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    width: 100%;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
+  .form-field input::placeholder,
+  .form-field textarea::placeholder {
+    color: rgba(249,247,243,0.2);
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus,
+  .form-field select:focus {
+    border-color: rgba(184,154,90,0.6);
+    background: rgba(249,247,243,0.07);
+  }
+
+  .form-field select option {
+    background: #1A1916;
+    color: var(--cream);
+  }
+
+  .form-field textarea {
+    resize: none;
+    height: 110px;
+    line-height: 1.7;
+  }
+
+  .form-submit {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+
+  .btn-submit {
+    background: var(--gold);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 15px 36px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, opacity 0.2s;
+    font-weight: 500;
+  }
+
+  .btn-submit:hover { background: #c9a96a; }
+  .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .form-success {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: rgba(249,247,243,0.55);
+    letter-spacing: 0.02em;
+  }
+
+  .form-success.visible { display: flex; }
+
+  .form-success svg { flex-shrink: 0; color: var(--gold); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    border-top: 0.5px solid rgba(249,247,243,0.08);
+    padding: 28px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(249,247,243,0.35);
+  }
+
+  .footer-right {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .footer-link {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(249,247,243,0.25);
+    transition: color 0.2s;
+  }
+
+  .footer-link:hover { color: rgba(249,247,243,0.6); }
+
+  .footer-copy {
+    font-size: 11px;
+    color: rgba(249,247,243,0.2);
+    letter-spacing: 0.04em;
+  }
+
+  /* ANIMATIONS */
+  @media (min-width: 961px) {
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @media (max-width: 960px) {
+    .fade-in { opacity: 1 !important; transform: none !important; }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    section { padding: 80px 32px; }
+    nav { padding: 0 32px; }
+    footer { padding: 24px 32px; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .about { grid-template-columns: 1fr; gap: 48px; }
+    .about-left { position: static; }
+    .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-bg-text { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 64px 20px; }
+    nav { padding: 0 20px; }
+    footer { padding: 20px; flex-direction: column; align-items: flex-start; gap: 16px; }
+    .footer-right { flex-direction: column; gap: 10px; align-items: flex-start; }
+    .services-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 28px; flex-wrap: wrap; }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-phone-block { width: 100%; box-sizing: border-box; }
+    .contact-form { margin-top: 32px; padding-top: 32px; }
+    .btn-submit { width: 100%; text-align: center; padding: 16px; }
+    .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .contact-right { display: none; }
+    h1 { font-size: 42px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#home" class="nav-logo">Cruz Financial <span>Associates</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="tel:+18602127882">+1 (860) 212-7882</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-text" aria-hidden="true">CFA</div>
+  <div class="hero-inner">
+    <div class="hero-tag fade-in visible">Cruz Financial Associates LLC</div>
+    <h1 class="fade-in visible" style="transition-delay:0.1s">
+      Capital solutions<br>built for <em>real results.</em>
+    </h1>
+    <p class="hero-sub fade-in visible" style="transition-delay:0.2s">
+      From real estate acquisitions to financial consulting, we structure deals that move. Built for investors, operators, and builders who need a partner that executes.
+    </p>
+    <div class="hero-actions fade-in visible" style="transition-delay:0.3s">
+      <a href="#contact" class="btn-primary">Start a conversation</a>
+      <a href="#services" class="btn-ghost">
+        Our services
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 8h10M8 3l5 5-5 5"/>
+        </svg>
+      </a>
+    </div>
+    <div class="hero-stats fade-in visible" style="transition-delay:0.4s">
+      <div>
+        <div class="stat-num">6+</div>
+        <div class="stat-label">Service lines</div>
+      </div>
+      <div>
+        <div class="stat-num">24h</div>
+        <div class="stat-label">Response time</div>
+      </div>
+      <div>
+        <div class="stat-num">U.S.</div>
+        <div class="stat-label">Multi-market reach</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header fade-in">
+    <div class="section-label">What we do</div>
+    <h2>Full-spectrum<br>deal <em>services.</em></h2>
+    <p>We operate across the full real estate and financial landscape: acquisition, disposition, and advisory capabilities under one roof.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card fade-in">
+      <div class="service-num">01</div>
+      <h3>Real Estate Wholesaling</h3>
+      <p>We identify, contract, and assign off-market properties at margin. Fast close, no retail fluff. Built for volume and precision.</p>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-num">02</div>
+      <h3>Land Flips</h3>
+      <p>Vacant land acquired below market and repositioned to qualified buyers. We find the spread, structure the deal, and move quickly.</p>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-num">03</div>
+      <h3>Land Acquisition</h3>
+      <p>Strategic land sourcing for investors, developers, and operators. We evaluate market fit, zoning, and exit potential before every buy.</p>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-num">04</div>
+      <h3>Financial Consulting</h3>
+      <p>Capital structure, deal underwriting, and financial strategy. We help clients navigate transactions with clarity at the right terms.</p>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-num">05</div>
+      <h3>Deal Structuring</h3>
+      <p>From assignment contracts to JV agreements, we structure transactions that protect your position and get deals to the closing table.</p>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-num">06</div>
+      <h3>Advisory Services</h3>
+      <p>Hands-on guidance for investors building portfolio strategy, entering new markets, or scaling acquisitions across multiple asset types.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-left fade-in">
+    <div class="section-label">Who we are</div>
+    <h2>Built on execution,<br>not <em>promises.</em></h2>
+  </div>
+  <div class="about-right fade-in">
+    <p>Cruz Financial Associates LLC was built to solve one problem: most financial and real estate firms talk strategy but deliver delays. We operate differently. Lean, structured, and focused entirely on closing.</p>
+    <p>We work with motivated sellers, active buyers, and investors at every scale. Our process is direct: find the deal, structure it right, and execute without noise.</p>
+    <div class="about-pillars">
+      <div class="pillar">
+        <div class="pillar-marker">I</div>
+        <div class="pillar-text">
+          <strong>Speed over bureaucracy</strong>
+          <span>Decisions made fast, deals closed on time. We don't sit on pipeline.</span>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-marker">II</div>
+        <div class="pillar-text">
+          <strong>Transparent structuring</strong>
+          <span>Every deal is laid out clearly. You know where the numbers come from.</span>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-marker">III</div>
+        <div class="pillar-text">
+          <strong>Multi-market reach</strong>
+          <span>Active across multiple U.S. markets with the infrastructure to move in any of them.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left fade-in">
+      <div class="section-label">Get in touch</div>
+      <h2>Let's work<br>on your deal.</h2>
+      <p>Whether you have a property under contract, need help structuring a transaction, or want to explore what we can do together, reach out directly.</p>
+      <a href="tel:+18602127882" class="contact-phone-block">
+        <svg class="phone-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F9F7F3" stroke-width="1.5">
+          <path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 014 6a2 2 0 012-2"/>
+        </svg>
+        <div>
+          <div class="phone-label">Call us directly</div>
+          <div class="phone-number">+1 (860) 212-7882</div>
+        </div>
+      </a>
+
+      <div class="contact-form">
+        <div class="contact-form-title">Or send us a message</div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf-name">Full Name</label>
+            <input type="text" id="cf-name" placeholder="John Smith" autocomplete="off" />
+          </div>
+          <div class="form-field">
+            <label for="cf-phone">Phone Number</label>
+            <input type="tel" id="cf-phone" placeholder="+1 (000) 000-0000" autocomplete="off" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="cf-service">Service of Interest</label>
+          <select id="cf-service">
+            <option value="" disabled selected>Select a service</option>
+            <option>Real Estate Wholesaling</option>
+            <option>Land Flips</option>
+            <option>Land Acquisition</option>
+            <option>Deal Structuring</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" placeholder="Tell us about your deal or question..."></textarea>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:4px;">
+          <input type="checkbox" id="cf-sms-consent" />
+          <label for="cf-sms-consent" style="font-size:12px;color:var(--ink-muted);line-height:1.6;cursor:pointer;">By submitting this form, you consent to receive SMS messages from Cruz Financial Associates LLC regarding your property or inquiry. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out at any time or HELP for assistance. View our <a href="https://www.cruzfinancialassociatesllc.com/privacy-policy.html" style="color:var(--gold);text-decoration:underline;">Privacy Policy</a>.</label>
+        </div>
+        <div class="form-submit">
+          <button class="btn-submit" id="cf-submit" onclick="submitContactForm()">Send Message</button>
+          <div class="form-success" id="cf-success">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Message received. We'll be in touch shortly.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-right fade-in">
+      <div>
+        <div class="cinfo-label">Company</div>
+        <div class="cinfo-val">Cruz Financial Associates LLC</div>
+      </div>
+      <div>
+        <div class="cinfo-label">Phone</div>
+        <div class="cinfo-val">+1 (860) 212-7882</div>
+        <div class="cinfo-note">Available for calls and text</div>
+      </div>
+      <div>
+        <div class="cinfo-label">Services offered</div>
+        <div class="services-list">
+          Real Estate Wholesaling<br>
+          Land Flips<br>
+          Land Acquisition<br>
+          Financial Consulting<br>
+          Deal Structuring<br>
+          Advisory Services
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Cruz Financial Associates LLC</div>
+  <div class="footer-right">
+    <a href="tel:+18602127882" class="footer-link">+1 (860) 212-7882</a>
+    <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+    <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+    <span class="footer-copy">© 2026</span>
+  </div>
+</footer>
+
+<script>
+  async function submitContactForm() {
+    const name = document.getElementById('cf-name').value.trim();
+    const phone = document.getElementById('cf-phone').value.trim();
+    const service = document.getElementById('cf-service').value;
+    const message = document.getElementById('cf-message').value.trim();
+    const consent = document.getElementById('cf-sms-consent').checked;
+
+    if (!name || !phone || !message) return;
+    if (!consent) {
+      document.getElementById('cf-sms-consent').style.outline = '1.5px solid #B89A5A';
+      return;
+    }
+    document.getElementById('cf-sms-consent').style.outline = '';
+
+    const btn = document.getElementById('cf-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    try {
+      const res = await fetch('https://cruzfn.onrender.com/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ full_name: name, phone, service, message, sms_consent: consent })
+      });
+
+      if (!res.ok) throw new Error('Failed');
+
+      btn.style.display = 'none';
+      document.getElementById('cf-success').classList.add('visible');
+      document.getElementById('cf-name').value = '';
+      document.getElementById('cf-phone').value = '';
+      document.getElementById('cf-service').selectedIndex = 0;
+      document.getElementById('cf-message').value = '';
+      document.getElementById('cf-sms-consent').checked = false;
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+      alert('Something went wrong. Please try again.');
+    }
+  }
+
+  // Nav scroll shadow
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+  }
+
+  // Scroll fade-in
+  const fadeEls = document.querySelectorAll('.fade-in:not(.visible)');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  fadeEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
